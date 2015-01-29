@@ -24,3 +24,6 @@ Method 2
 1. Extract the folder
 1. Using your favourite FTP client, upload the folder \'piklist-plugin-builder\' to \'/wp-content/plugins\' on your server
 1. In your WordPress installation, navigate to Plugins->Installed Plugins and activate Piklist Plugin Builder
+
+== Notes ==
+In order to preserve the directory structure in GitHub, any empty directory contains an empty '.gitignore' file.  Once you add files to a directory, it is a good idea to delete the '.gitignore'.
