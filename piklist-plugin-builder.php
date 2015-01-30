@@ -41,3 +41,53 @@ function my_init_function()
 }
 
 /***START BUILDING YOUR PLUGIN*/
+//Register The Settings Page
+//Customize to Build Your Settings Page
+add_filter('piklist_admin_pages', 'builder_setting_pages');
+  function builder_setting_pages($pages)
+  {
+     $pages[] = array(
+      'page_title' => __('Builder Settings')
+      ,'menu_title' => __('Builder', 'piklist')
+      ,'sub_menu' => 'themes.php' //Under Appearance menu
+      ,'capability' => 'manage_options'
+      ,'menu_slug' => 'custom_settings'
+      ,'setting' => 'builder_settings'
+      ,'menu_icon' => plugins_url('piklist/parts/img/piklist-icon.png')
+      ,'page_icon' => plugins_url('piklist/parts/img/piklist-page-icon-32.png')
+      ,'single_line' => true
+      ,'default_tab' => 'Basic'
+      ,'save_text' => 'Save Settings'
+    );
+ 
+    return $pages;
+  }
+ 
+//Register Custom Post Type
+//Uncomment and Customize to create a Custom Post Type
+/*
+add_filter('piklist_post_types', 'builder_demo_post_type');
+ function builder_demo_post_type($post_types)
+ {
+  $post_types['builder'] = array(
+    'labels' => piklist('post_type_labels', 'Builder Demo')
+    ,'title' => __('Enter a new  Title')
+    ,'public' => true
+    ,'rewrite' => array(
+      'slug' => 'builder-demo'
+    )
+    ,'supports' => array(
+      'author'
+      ,'revisions'
+    )
+    ,'hide_meta_box' => array(
+      'slug'
+      ,'author'
+      ,'revisions'
+      ,'comments'
+      ,'commentstatus'
+    )
+  );
+return $post_types;
+}
+*/
